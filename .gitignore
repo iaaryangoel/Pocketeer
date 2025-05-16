@@ -1,0 +1,25 @@
+# ========== BACKEND ==========
+backend/node_modules/
+backend/.env
+backend/uploads/
+
+# ========== FRONTEND ==========
+frontend/client/node_modules/
+frontend/client/dist/
+frontend/client/.env
+frontend/client/.local
+
+# ========== COMMON ==========
+.env
+*.log
+logs/
+.DS_Store
+.vscode/
+.idea/
+
+# ========== SYSTEM FILES ==========
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
