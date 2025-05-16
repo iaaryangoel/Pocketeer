@@ -11,4 +11,4 @@ const IncomeSchema = new mongoose.Schema(
     {timestamps: true} // adds createdAt and updatedAt automatically
 );
 
-module.exports = mongoose.model("Income", IncomeSchema); // Creates a model called User from schema
+module.exports = mongoose.model("Income", IncomeSchema); // Creates a model called Income from schema
