@@ -1,28 +1,40 @@
 export const validateEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
 };
 
 export const getInitials = (name) => {
-    if(!name){return "";}
-    
-    const words = name.split(" ");
-    let initials = "";
+  if (!name) {
+    return "";
+  }
 
-    for(let i=0; i<Math.min(words.length, 2); i++){
-        initials += words[i][0];
-    }
+  const words = name.split(" ");
+  let initials = "";
 
-    return initials.toUpperCase();
+  for (let i = 0; i < Math.min(words.length, 2); i++) {
+    initials += words[i][0];
+  }
+
+  return initials.toUpperCase();
 };
 
 export const addThousandsSeparator = (num) => {
-    if(num==null || isNaN(num)){return;}
+  if (num == null || isNaN(num)) {
+    return;
+  }
 
-    const [integerPart, fractionalPart] = num.toString().split(".");
-    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const [integerPart, fractionalPart] = num.toString().split(".");
+  const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-    return fractionalPart ?
-           `${formattedInteger}.${fractionalPart}` :
-           formattedInteger;
+  return fractionalPart
+    ? `${formattedInteger}.${fractionalPart}`
+    : formattedInteger;
+};
+
+export const prepareExpenseBarChart = (data = []) => {
+  const chartData = data.map((item) => ({
+    category: item?.category,
+    amount: item?.amount,
+  }));
+  return chartData;
 };
