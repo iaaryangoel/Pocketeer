@@ -18,7 +18,7 @@ const Expense = () => {
   const [loading, setLoading] = useState(false);
   const [openDeleteAlert, setOpenDeleteAlert] = useState({
     show: false,
-    date: null,
+    data: null,
   });
 
   const [openAddExpenseModal, setOpenAddExpenseModal] = useState(false);

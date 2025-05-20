@@ -18,7 +18,7 @@ const Income = () => {
   const [loading, setLoading] = useState(false);
   const [openDeleteAlert, setOpenDeleteAlert] = useState({
     show: false,
-    date: null,
+    data: null,
   });
 
   const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);

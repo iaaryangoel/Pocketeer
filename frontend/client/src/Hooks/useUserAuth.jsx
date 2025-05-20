@@ -1,37 +1,45 @@
-import { useContext, useEffect } from "react"
-import { UserContext } from "../Context/UserContext"
+import { useContext, useEffect } from "react";
+import { UserContext } from "../Context/UserContext";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../Utils/axiosInstance";
 import { API_PATHS } from "../Utils/APIpaths";
 
 export const useUserAuth = () => {
-    const {user,updateUser, clearUser} = useContext(UserContext);
-    const navigate = useNavigate();
+  const { user, updateUser, clearUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-    useEffect(()=> {
-        if(user){return;}
+  useEffect(() => {
+    if (user) {
+      return;
+    }
 
-        let isMounted = true;
+    let isMounted = true;
 
-        const fetchUserInfo = async () => {
-            try{
-                const response = await axiosInstance.get(API_PATHS.AUTH.GET_USER_INFO);
-                if(isMounted && response.data){
-                    updateUser(response.data);
-                }
-            } catch (error){
-                console.error("Failed to fetch user info.", error);
-                if(isMounted){
-                    clearUser();
-                    navigate("/login");
-                }
-            }
-        };
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.log("No token found, skipping fetchUserInfo");
+      return;
+    }
 
-        fetchUserInfo();
+    const fetchUserInfo = async () => {
+      try {
+        const response = await axiosInstance.get(API_PATHS.AUTH.GET_USER_INFO);
+        if (isMounted && response.data) {
+          updateUser(response.data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch user info.", error);
+        if (isMounted) {
+          clearUser();
+          navigate("/login");
+        }
+      }
+    };
 
-        return () => {
-            isMounted = false;
-        };
-    }, [updateUser, clearUser, navigate]);
+    fetchUserInfo();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [updateUser, clearUser, navigate]);
 };
