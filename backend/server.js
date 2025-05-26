@@ -1,6 +1,7 @@
 require("dotenv").config(); // Loads environment variables from .env file
 const express = require("express");
 const cors = require("cors");
+const fs = require('fs');
 const path = require("path");
 const conncectDB = require("./config/db")
 const authRoutes = require("./routes/authRoutes")
@@ -12,6 +13,11 @@ const app = express(); // Creates an Express app
 app.use(express.json()); // Parses JSON from incoming requests
 conncectDB(); // Connects to MongoDB database
 
+// Ensure uploads folder exists (important for platforms like Render)
+const uploadsPath = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsPath)) {
+  fs.mkdirSync(uploadsPath);
+}
 
 // Middleware to handle CORS
 // Enables CORS so frontend and backend can communicate even if on different ports
