@@ -31,7 +31,7 @@ const SideMenu = ({ activeMenu }) => {
         {user?.profileImageUrl ? ( 
           <img
             className="w-20 h-20 bg-slate-400 rounded-full"
-            src={user?.profileImageUrl || ""}
+            src={user?.profileImageUrl && `https://pocketeer-backend.onrender.com/${user.profileImageUrl}`}
             alt="Profile Image"
           />
         ) : (
