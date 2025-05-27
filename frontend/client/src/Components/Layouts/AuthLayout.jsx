@@ -9,7 +9,7 @@ const AuthLayout = ({children}) => {
       {/* <div className="w-screen h-screen md:w-[60vw] px-12 pt-8 pb-12"> */}
       <div className="w-full md:w-[60%] px-8 md:px-12 pt-8 pb-12">
         {/* <h2 className="text-lg font-medium text-black">Pocketeer</h2> */}
-        <h2 className="text-lg font-bold text-black mb-8">Pocketeer</h2>
+        <h2 className="text-lg font-bold text-black mb-8">Pocketeer - Manage your Pockets!</h2>
         {children}
       </div>
 

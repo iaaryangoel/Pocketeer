@@ -12,6 +12,7 @@ import Income from "./Pages/Dashboard/Income";
 import Expense from "./Pages/Dashboard/Expense";
 import UserProvider from "./Context/UserContext";
 import {Toaster} from "react-hot-toast"
+import PrivateRoute from "./Components/Layouts/PrivateRoute";
 
 const App = () => {
   return (
@@ -22,9 +23,9 @@ const App = () => {
             <Route path="/" element={<Root />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/signup" exact element={<SignUp />} />
-            <Route path="/dashboard" exact element={<Home />} />
-            <Route path="/income" exact element={<Income />} />
-            <Route path="/expense" exact element={<Expense />} />
+            <Route path="/dashboard" exact element={<PrivateRoute> <Home /> </PrivateRoute>} />
+            <Route path="/income" exact element={<PrivateRoute> <Income /> </PrivateRoute>} />
+            <Route path="/expense" exact element={<PrivateRoute> <Expense /> </PrivateRoute>} />
           </Routes>
         </Router>
       </div>
