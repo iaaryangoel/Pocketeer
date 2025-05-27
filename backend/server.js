@@ -37,7 +37,7 @@ app.use("/api/v1/dashboard", dashboardRoutes);
 
 // Tells Express to serve static files (like images) from the uploads/ folder
 // So now imageUrl will actually show the image in browser/postman
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static(uploadsPath));
 
 
 const PORT = process.env.PORT || 5000;
