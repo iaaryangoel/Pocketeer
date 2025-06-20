@@ -24,4 +24,8 @@ export const API_PATHS = {
     IMAGE: {
         UPLOAD_IMAGE: "/api/v1/auth/upload-image",
     },
+    LOVE: {
+        GET_LOVE : "/api/love/get",
+        UPDATE_LOVE : "/api/love/toggle",
+    }
 };

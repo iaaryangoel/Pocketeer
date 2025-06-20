@@ -8,6 +8,7 @@ const authRoutes = require("./routes/authRoutes")
 const incomeRoutes = require("./routes/incomeRoutes")
 const expenseRoutes = require("./routes/expenseRoutes")
 const dashboardRoutes = require("./routes/dashboardRoutes")
+const loveRoutes = require("./routes/loveRoutes")
 
 const app = express(); // Creates an Express app
 app.use(express.json()); // Parses JSON from incoming requests
@@ -34,6 +35,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
+app.use('/api/love', loveRoutes);
 
 // Tells Express to serve static files (like images) from the uploads/ folder
 // So now imageUrl will actually show the image in browser/postman
