@@ -1,5 +1,5 @@
 import React from 'react'
-import card from "../../assets/Images/card.png"
+import illustration from "../../assets/Images/illustration.png"
 import {LuTrendingUpDown} from "react-icons/lu"
 
 const AuthLayout = ({children}) => {
@@ -35,8 +35,8 @@ const AuthLayout = ({children}) => {
 
         <div className="absolute bottom-10 left-5 right-5 p-6 rounded-xl z-10">
         <img 
-            src={card}
-            className="w-64 lg:w-[90%] absolute bottom-10 rounded-xl"
+            src={illustration}
+            className="w-64 h-90 lg:w-[90%] absolute bottom-4 rounded-xl"
         />
         </div>
       </div>
