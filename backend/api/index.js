@@ -15,10 +15,10 @@ app.use(express.json()); // Parses JSON from incoming requests
 conncectDB(); // Connects to MongoDB database
 
 // Ensure uploads folder exists (important for platforms like Render)
-const uploadsPath = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadsPath)) {
-  fs.mkdirSync(uploadsPath);
-}
+// const uploadsPath = path.join(__dirname, 'uploads');
+// if (!fs.existsSync(uploadsPath)) {
+//   fs.mkdirSync(uploadsPath);
+// }
 
 // Middleware to handle CORS
 // Enables CORS so frontend and backend can communicate even if on different ports
@@ -39,7 +39,7 @@ app.use('/api/love', loveRoutes);
 
 // Tells Express to serve static files (like images) from the uploads/ folder
 // So now imageUrl will actually show the image in browser/postman
-app.use("/uploads", express.static(uploadsPath));
+// app.use("/uploads", express.static(uploadsPath));
 
 
 // const PORT = process.env.PORT || 5000;
