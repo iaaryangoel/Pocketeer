@@ -3,12 +3,12 @@ const express = require("express");
 const cors = require("cors");
 const fs = require('fs');
 const path = require("path");
-const conncectDB = require("./config/db")
-const authRoutes = require("./routes/authRoutes")
-const incomeRoutes = require("./routes/incomeRoutes")
-const expenseRoutes = require("./routes/expenseRoutes")
-const dashboardRoutes = require("./routes/dashboardRoutes")
-const loveRoutes = require("./routes/loveRoutes")
+const conncectDB = require("../config/db")
+const authRoutes = require("../routes/authRoutes")
+const incomeRoutes = require("../routes/incomeRoutes")
+const expenseRoutes = require("../routes/expenseRoutes")
+const dashboardRoutes = require("../routes/dashboardRoutes")
+const loveRoutes = require("../routes/loveRoutes")
 
 const app = express(); // Creates an Express app
 app.use(express.json()); // Parses JSON from incoming requests
