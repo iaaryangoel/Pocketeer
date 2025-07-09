@@ -42,5 +42,5 @@ app.use('/api/love', loveRoutes);
 app.use("/uploads", express.static(uploadsPath));
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); // Starts the server on the given port
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); // Starts the server on the given port
